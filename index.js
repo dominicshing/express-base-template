@@ -8,7 +8,11 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+// Parse request body's application/json data
 app.use(express.json());
+
+// Parse request body's application/x-www-form-urlencoded data
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/', indexRouter);
